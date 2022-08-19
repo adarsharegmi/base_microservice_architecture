@@ -1,15 +1,25 @@
 version: "3.3"
 
 services:
-  postgres:
+  db:
     image: postgres:11.2-alpine
     container_name: micro_backend
     restart: always
     volumes:
       - ../../var/pgdata:/var/lib/postgresql/data
     ports:
-      - 5435:5432
+      - 5432:5432
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
+  user_service:
+    build: . # relative to docker-compose
+    volumes:
+      - .:/app # mount point
+    ports:
+      - 8000:8001 # host:container
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
