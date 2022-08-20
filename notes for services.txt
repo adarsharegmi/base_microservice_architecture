@@ -1,23 +1,7 @@
-for user registration I have folowing things to handle api
+user_service 
+  >>for user crud operations only  and 
+  >> Remainging login and logout operations
 
-user_registration
-    user features 
-    >> 
-    first_name, 
-    last_name
-    email_id
-    mobile_number
-    password
-    confirm_password
-    address
-
-
-user_login 
-
-    user_name
-    password
-    
-user_info
-
-
-
+JWT_service
+  >> for Json web token authentication (token generated will maintain session in client 
+     side instead of storing in server side)
