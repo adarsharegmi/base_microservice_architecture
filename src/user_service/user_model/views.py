@@ -90,17 +90,13 @@ def registration_req(request):
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework import permissions
 from .models import User
 from user_model.serializers import UserSerializer
+from user_login.decorator import authorize
 
 
 class UserApiView(APIView):
-    # check if user is authenticated
-    # permission_classes = [permissions.IsAuthenticated]
-
     # list all user
-
     def get(self, request, *args, **kwargs):
         """
         list all user
@@ -145,6 +141,7 @@ class UserDetailView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
+    @authorize()
     def put(self, request, username, *args, **kwargs):
         """
         update the user info
