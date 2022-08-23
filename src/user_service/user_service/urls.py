@@ -18,7 +18,7 @@ from django.urls import path, include
 from user_model import urls as user_model_urls
 from user_login import urls as user_login_urls
 from kanban_board import urls as kanban_board_urls
-
+from kanban_user import urls as kanban_user_urls
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -26,4 +26,5 @@ urlpatterns = [
     path("user_model/", include(user_model_urls)),
     path("user_login/", include(user_login_urls)),
     path("kanban_board/", include(kanban_board_urls)),
+    path("kanban_user/", include(kanban_user_urls)),
 ]

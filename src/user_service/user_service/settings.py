@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "user_model",
     "kanban_board",
+    "kanban_user",
 ]
 
 MIDDLEWARE = [
