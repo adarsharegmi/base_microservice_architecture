@@ -7,7 +7,7 @@ from kanban_board.serializers import KanbanBoardSerializer
 from user_login.decorator import authorize
 
 
-class KanbanBoardView(APIView):
+class KanbanBoardAPIView(APIView):
     # list all the boards
     def get(self, request, *args, **kwargs):
         """
